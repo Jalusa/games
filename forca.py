@@ -4,10 +4,13 @@ def jogar():
     print("***Bem vindo ao jogo de Forca!***")
     print("*********************************")
 
+    arquivo = open("palavras.txt","r")
+
+
     palavra_secreta = "banana".upper()
 
-    letras_certas = ["_", "_", "_", "_", "_", "_"]
-
+    letras_certas = ["_" for letras in palavra_secreta]
+    
     enforcou = False
     acertou = False
     erros = 0
@@ -29,7 +32,7 @@ def jogar():
         else:
             erros += 1
 
-        if "_" not in letras_certas:
+        if ("_") not in letras_certas:
             print("Você acertou! A palavra secreta é {}.".format(palavra_secreta))
             break
 
